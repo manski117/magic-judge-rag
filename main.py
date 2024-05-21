@@ -4,7 +4,6 @@ from magicRAG import MagicRAG
 import uvicorn
 import os #core python module to allow env files to be loaded up
 from dotenv import load_dotenv, dotenv_values
-print("Loaded API Key:", os.getenv("MY_OPENAI_API_KEY"))
 
 # Define a Pydantic model to structure the JSON request for queries
 class Query(BaseModel):
@@ -41,5 +40,5 @@ if __name__ == "__main__":
 
 @app.get("/")
 async def root():
-    return {"message": "Hello Future Magic RAG"}
+    return {"message": "Magic RAG LLM Judge API v0.1"}
 
