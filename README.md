@@ -7,3 +7,5 @@ This API connects to the [Magic JudgeBot frontend](https://github.com/manski117/
 
 ### Developed using FastAPI and Render.com
 Developed with the help of the [Render.com](https://render.com/) [example template](https://github.com/new?template_name=fastapi&template_owner=render-examples)
+
+To test on localhost:8090, run `uvicorn main:app --host 0.0.0.0 --port 8090 --reload` once uvicorn and fastapi dependencies are installed.
