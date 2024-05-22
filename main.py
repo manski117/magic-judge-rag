@@ -4,12 +4,21 @@ from magicRAG import MagicRAG
 import uvicorn
 import os #core python module to allow env files to be loaded up
 from dotenv import load_dotenv, dotenv_values
+from fastapi.middleware.cors import CORSMiddleware
 
 # Define a Pydantic model to structure the JSON request for queries
 class Query(BaseModel):
     question: str
 
 app = FastAPI()
+# Set up CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 @app.get("/api/home")
 async def return_home():
@@ -40,5 +49,5 @@ if __name__ == "__main__":
 
 @app.get("/")
 async def root():
-    return {"message": "Magic RAG LLM Judge API v0.2.3"}
+    return {"message": "Magic RAG LLM Judge API v1.0.1"}
 
