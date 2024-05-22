@@ -40,5 +40,5 @@ if __name__ == "__main__":
 
 @app.get("/")
 async def root():
-    return {"message": "Magic RAG LLM Judge API v0.2.1"}
+    return {"message": "Magic RAG LLM Judge API v0.2.2"}
 
